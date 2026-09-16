@@ -397,21 +397,6 @@
             color: #bbb;
         }
 
-        .demo-note {
-            background: #fff7e6;
-            border-left: 5px solid #e09a00;
-            padding: 15px 18px;
-            border-radius: 8px;
-            margin: 20px auto;
-            max-width: 900px;
-            color: #664700;
-        }
-
-        body.dark .demo-note {
-            background: #332a18;
-            color: #ffd98a;
-        }
-
         footer {
             background: #191919;
             color: white;
@@ -690,18 +675,11 @@
         </div>
     </section>
 
-    <!-- Demo Notice -->
-    <div class="demo-note">
-        <strong>🎓 College Demo Mode:</strong>
-        This GitHub Pages version uses demo/local browser storage.
-        The full Flask + MySQL functionality is available in the local version.
-    </div>
-
     <!-- Blood Stock -->
     <section id="stock">
         <div class="section-title">
             <h2>🩸 Blood Stock</h2>
-            <p>Current demo blood availability</p>
+            <p>Current blood availability</p>
         </div>
 
         <div id="stockGrid" class="stock-grid"></div>
@@ -901,7 +879,7 @@
                 <div class="icon">📝</div>
                 <h3>1. Register</h3>
                 <p>
-                    Users can register and create a demo LifeFlow account.
+                    Users can register and create a LifeFlow account.
                 </p>
             </div>
 
@@ -933,7 +911,7 @@
         </p>
 
         <p style="margin-top:10px;">
-            🎓 BCA Project Demo | Designed for Academic Presentation
+            🎓 BCA Project | Designed for Academic Presentation
         </p>
 
         <p style="margin-top:20px;font-size:13px;">
@@ -942,7 +920,7 @@
     </footer>
 
 
-    <!-- ================= LOGIN MODAL ================= -->
+    <!-- LOGIN MODAL -->
 
     <div id="loginModal" class="modal">
 
@@ -984,7 +962,7 @@
     </div>
 
 
-    <!-- ================= REGISTER MODAL ================= -->
+    <!-- REGISTER MODAL -->
 
     <div id="registerModal" class="modal">
 
@@ -1031,7 +1009,7 @@
     </div>
 
 
-    <!-- ================= DONOR RECEIPT ================= -->
+    <!-- DONOR RECEIPT -->
 
     <div id="receiptModal" class="modal">
 
@@ -1105,7 +1083,7 @@
     </div>
 
 
-    <!-- ================= REQUEST SUCCESS ================= -->
+    <!-- REQUEST SUCCESS -->
 
     <div id="requestSuccessModal" class="modal">
 
@@ -1126,7 +1104,7 @@
                 </h2>
 
                 <p id="requestSuccessMessage">
-                    Your demo blood request has been created successfully.
+                    Your blood request has been created successfully.
                 </p>
 
             </div>
@@ -1180,15 +1158,9 @@
     <div id="toast"></div>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- JAVASCRIPT -->
 
     <script>
-
-        /* ==========================================
-           LIFEFLOW GITHUB PAGES DEMO
-           No Flask / MySQL required
-        ========================================== */
-
 
         const demoBloodStock = {
             "A+": 120,
@@ -1201,10 +1173,6 @@
             "AB-": 18
         };
 
-
-        /* ==========================================
-           BASIC HELPERS
-        ========================================== */
 
         function $(id) {
             return document.getElementById(id);
@@ -1247,10 +1215,6 @@
         });
 
 
-        /* ==========================================
-           NAVIGATION
-        ========================================== */
-
         function scrollToSection(id) {
 
             const element = $(id);
@@ -1262,10 +1226,6 @@
             }
         }
 
-
-        /* ==========================================
-           DARK MODE
-        ========================================== */
 
         function loadTheme() {
 
@@ -1290,10 +1250,6 @@
             );
         }
 
-
-        /* ==========================================
-           BLOOD STOCK
-        ========================================== */
 
         function loadBloodStock() {
 
@@ -1325,10 +1281,6 @@
         }
 
 
-        /* ==========================================
-           FIND BLOOD
-        ========================================== */
-
         function findBlood() {
 
             const group = $("findBloodGroup").value;
@@ -1352,7 +1304,7 @@
             if (units > 0) {
 
                 result.innerHTML =
-                    `✅ ${group} blood is available. 
+                    `✅ ${group} blood is available.
                      Current stock: ${units} units.`;
 
                 result.style.color = "#16803c";
@@ -1367,14 +1319,11 @@
         }
 
 
-        /* ==========================================
-           DEMO REGISTER
-        ========================================== */
+        /* REGISTER */
 
         $("registerForm").addEventListener("submit", function(event) {
 
             event.preventDefault();
-
 
             const name =
                 $("registerName").value.trim();
@@ -1418,11 +1367,9 @@
 
 
             const newUser = {
-
                 name: name,
                 email: email,
                 password: password
-
             };
 
 
@@ -1458,9 +1405,7 @@
         });
 
 
-        /* ==========================================
-           DEMO LOGIN
-        ========================================== */
+        /* LOGIN */
 
         $("loginForm").addEventListener("submit", function(event) {
 
@@ -1529,10 +1474,6 @@
         });
 
 
-        /* ==========================================
-           CHECK LOGIN
-        ========================================== */
-
         function checkLogin() {
 
             const loggedIn =
@@ -1558,10 +1499,6 @@
         }
 
 
-        /* ==========================================
-           LOGOUT
-        ========================================== */
-
         function logoutDemo() {
 
             localStorage.setItem(
@@ -1580,10 +1517,6 @@
             );
         }
 
-
-        /* ==========================================
-           SWITCH LOGIN / REGISTER
-        ========================================== */
 
         function switchToRegister() {
 
@@ -1605,9 +1538,7 @@
         }
 
 
-        /* ==========================================
-           DONOR REGISTRATION
-        ========================================== */
+        /* DONOR REGISTRATION */
 
         $("donorForm").addEventListener("submit", function(event) {
 
@@ -1705,14 +1636,12 @@
             openModal("receiptModal");
 
             showToast(
-                "Demo donor registration successful!"
+                "Donor registration successful!"
             );
         });
 
 
-        /* ==========================================
-           BLOOD REQUEST
-        ========================================== */
+        /* BLOOD REQUEST */
 
         $("requestForm").addEventListener("submit", function(event) {
 
@@ -1819,29 +1748,10 @@
 
 
             showToast(
-                "Demo blood request submitted successfully!"
+                "Blood request submitted successfully!"
             );
         });
 
-
-        /* ==========================================
-           ESCAPE HTML
-        ========================================== */
-
-        function escapeHTML(value) {
-
-            return String(value)
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-
-
-        /* ==========================================
-           INITIAL LOAD
-        ========================================== */
 
         document.addEventListener("DOMContentLoaded", function() {
 
@@ -1853,8 +1763,8 @@
 
         });
 
-
     </script>
 
 </body>
 </html>
+
